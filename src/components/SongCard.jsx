@@ -26,7 +26,7 @@ const SongCard = ({ song, index , isPlaying , activeSong , data }) =>{
       <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex z-10 group-hover:scale-105 duration-500 rounded-lg mb-3 ${activeSong.title===song.title ? "flex bg-black bg-opacity-70" : "hidden"}`}>
         <PlayPause song={song} handlePause = {handlePauseClick} handlePlay={handlePlayClick} isPlaying={isPlaying} activeSong={activeSong}></PlayPause>
       </div>
-      <img className="group-hover:scale-105 duration-500 rounded-lg mb-3" src={song.images.coverart}></img>
+      <img onClick={handlePlayClick} className="group-hover:scale-105 duration-500 rounded-lg mb-3" src={song.images.coverart}></img>
       
        
     </div>
