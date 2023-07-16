@@ -34,7 +34,7 @@ const Discover = () => {
 
         <div className="flex flex-wrap gap-8">
            {data?.tracks.map((song , i) => {
-            return <SongCard key={song.key}  song={song} index = {i} activeSong = {activeSong} isPlaying={isPlaying}></SongCard>
+            return <SongCard key={song.key}  song={song} index = {i} activeSong = {activeSong} isPlaying={isPlaying} data = {data}></SongCard>
            })}
 
         </div>
