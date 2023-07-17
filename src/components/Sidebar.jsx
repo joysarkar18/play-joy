@@ -33,7 +33,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="absolute top-3 md:hidden block right-3 onClick={mobileClickHandeler}">
+      <div className="absolute top-3 md:hidden block right-3 onClick={mobileClickHandeler} z-30">
         {mobileView ? <RiCloseLine className="text-gray-300" size={30} onClick={mobileClickHandeler}></RiCloseLine> : <HiOutlineMenu size={30} className="text-gray-300" onClick={mobileClickHandeler}></HiOutlineMenu>}
       </div>
 
