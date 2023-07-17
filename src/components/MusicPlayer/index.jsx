@@ -15,7 +15,7 @@ const MusicPlayer = () => {
   const [appTime, setAppTime] = useState(0);
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
-  const [shuffle, setShuffle] = useState(false);
+  const [shuffle, setShuffle] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,10 +33,11 @@ const MusicPlayer = () => {
   };
 
   const handleNextSong = () => {
-    dispatch(playPause(false));
-
+    // dispatch(playPause(false));
+   
     if (!shuffle) {
       dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+      
     } else {
       dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
     }

@@ -9,9 +9,8 @@ const SongCard = ({ song, index , isPlaying , activeSong , data }) =>{
   const handlePauseClick = () => {
     dispatch(playPause(false))
   }
-
   const handlePlayClick = () => {
-    console.log("play - clicked");
+    console.log("play - clicked " + index);
       dispatch(setActiveSong({song, data , index}))
       dispatch(playPause(true)) 
   }
@@ -23,18 +22,18 @@ const SongCard = ({ song, index , isPlaying , activeSong , data }) =>{
     key={song.key}
   >
     <div className="relative w-full h-full group cursor-pointer">
-      <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex z-10 group-hover:scale-105 duration-500 rounded-lg mb-3 ${activeSong.title===song.title ? "flex bg-black bg-opacity-70" : "hidden"}`}>
+      <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex z-10 group-hover:scale-105 duration-500 rounded-lg mb-3 ${activeSong?.title===song?.title ? "flex bg-black bg-opacity-70" : "hidden"}`}>
         <PlayPause song={song} handlePause = {handlePauseClick} handlePlay={handlePlayClick} isPlaying={isPlaying} activeSong={activeSong}></PlayPause>
       </div>
-      <img onClick={handlePlayClick} className="group-hover:scale-105 duration-500 rounded-lg mb-3" src={song.images.coverart}></img>
+      <img onClick={handlePlayClick} className="group-hover:scale-105 duration-500 rounded-lg mb-3" src={song?.images?.coverart}></img>
       
        
     </div>
 
     <div  className="" > 
-        <p className="text-left overflow-hidden text-gray-300 truncate font-semibold text-lg">{song.title}</p>
+        <p className="text-left overflow-hidden text-gray-300 truncate font-semibold text-lg">{song?.title}</p>
         <Link to="/artist">
-        <p className="text-gray-300">{song.subtitle}</p>
+        <p className="text-gray-300">{song?.subtitle}</p>
         </Link>
       </div>
     

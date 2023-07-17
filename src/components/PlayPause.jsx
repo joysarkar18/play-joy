@@ -4,7 +4,7 @@ import {AiOutlinePauseCircle} from "react-icons/ai"
 const PlayPause = (props) =>
 
 {
-  if(props.isPlaying && props.song.title===props.activeSong.title){
+  if(props.isPlaying && props.song?.title===props.activeSong?.title){
     return (
       <div>
         <AiOutlinePauseCircle size={70} className="text-gray-300" onClick={props.handlePause}></AiOutlinePauseCircle>
